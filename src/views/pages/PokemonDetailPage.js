@@ -1,11 +1,9 @@
 import { fetchPokeApi } from "@/hooks/useServerPokeApi";
-import PokemonDetails from "../components/PokemonDetails";
-import GoBackButton from "../components/GoBackButton";
-
+import PokemonDetails from "@/views/components/PokemonDetails";
+import GoBackButton from "@/views/components/GoBackButton";
+export const revalidate = 86400;
 export default async function PokemonDetailPage({ params }) {
-  // Await params to ensure it's resolved before using its properties.
   const { name } = await Promise.resolve(params);
-
   try {
     const pokemon = await fetchPokeApi(`/pokemon/${name}`);
     return (
