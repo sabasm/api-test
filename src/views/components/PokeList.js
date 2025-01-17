@@ -1,4 +1,4 @@
-import PokeCard from "./PokeCard"
+import PokeCard from "./PokeCard";
 
 export default function PokeList({ pokemons = [] }) {
   return (
@@ -7,7 +7,5 @@ export default function PokeList({ pokemons = [] }) {
         <PokeCard key={index} pokemon={pokemon} />
       ))}
     </div>
-  )
+  );
 }
-
-

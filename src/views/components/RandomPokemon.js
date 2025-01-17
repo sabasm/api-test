@@ -1,7 +1,9 @@
 import { fetchPokeApi } from "@/hooks/useServerPokeApi";
+import PokeCard from "./PokeCard";
 
 export default async function RandomPokemon() {
-    const generateRandomPokemonId = (maxId = 898) => Math.floor(Math.random() * maxId) + 1;
+    const generateRandomPokemonId = (maxId = 898) =>
+        Math.floor(Math.random() * maxId) + 1;
 
     try {
         const randomId = generateRandomPokemonId(); // ID between 1 and 898
@@ -10,8 +12,7 @@ export default async function RandomPokemon() {
         return (
             <div>
                 <h2>Random Pokémon</h2>
-                <p>Name: {pokemon.name}</p>
-                <img src={pokemon.sprites?.front_default} alt={pokemon.name} />
+                <PokeCard pokemon={pokemon} />
             </div>
         );
     } catch (error) {
