@@ -1,10 +1,12 @@
-import { pokeApi } from "@/network"
-import { API } from "@/config"
+import { pokeApi } from "@/network";
+import { buildApiUrl, handleApiRequest } from "@/network/api.utils";
 
+/**
+ * Fetches data from the Poke API on the server-side.
+ * @param {string} endpoint - API endpoint to fetch.
+ * @returns {Promise<any>} - The fetched data.
+ */
 export async function fetchPokeApi(endpoint) {
-  const url = `${API.POKE_API_BASE_URL}${endpoint}`
-  const response = await pokeApi.get(url)
-  return response.data
+  const url = buildApiUrl(endpoint);
+  return handleApiRequest(() => pokeApi.get(url));
 }
-
-

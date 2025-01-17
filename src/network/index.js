@@ -1,5 +1,7 @@
 import pokeApi from "./pokeApi.axios.instance";
+import * as apiUtils from "./api.utils";
 
 export {
-    pokeApi
+    pokeApi,
+    apiUtils
 }

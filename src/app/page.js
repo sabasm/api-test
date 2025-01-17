@@ -4,7 +4,9 @@ export default async function Home() {
   return (
     <div>
       <RandomPokemon />
+      <hr />
       <PokedexPage />
+      <hr />
     </div>
   )
 }
